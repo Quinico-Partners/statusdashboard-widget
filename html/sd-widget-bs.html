@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>StatusDashboard Widget</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/sd-widget.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row pt-2">
+        <div class="col-sm-12 col-md-12 col-lg-6 text-right" style="height: 40px;">
+          <div class="sd-spinner"></div>
+          <a id="sd-previous"><i class="material-icons" style="font-size:32px;" title="Previous results">chevron_left</i></a>
+          <a id="sd-next"><i class="material-icons" style="font-size:32px;" title="Next results">chevron_right</i></a>
+        </div>
+      </div> 
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-6">
+          <div id="status-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/sd-widget.js"></script>
+  </body>
+</html>
