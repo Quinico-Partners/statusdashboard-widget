@@ -23,13 +23,13 @@
 
 
 // User Configuration Settings
+var domain = '';
 var color_operational = '#4CAF50';
 var status_operational = 'Operational';
 var color_incident = '#F44336';
 var status_incident = 'Incident';
 var color_maintenance = "#2196F3";
 var status_maintenance = "Maintenance"
-var domain = 'https://status.statusdashboard.com';
 var records = 5;
 var debug = false;
 // End User Configuration Settings
