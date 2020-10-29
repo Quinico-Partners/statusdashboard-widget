@@ -4,7 +4,7 @@
 
   Author: Tom Alessi
 
-  Copyright: 2019 Quinico Partners, LLC
+  Copyright: 2020 Quinico Partners, LLC
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -23,13 +23,15 @@
 
 
 // User Configuration Settings
-var domain = '';
+var domain = 'https://';
 var color_operational = '#4CAF50';
 var status_operational = 'Operational';
 var color_incident = '#F44336';
 var status_incident = 'Incident';
 var color_maintenance = "#2196F3";
-var status_maintenance = "Maintenance"
+var status_maintenance = "Maintenance";
+var color_both = "#FFA500";
+var status_both = "Incident and Maintenance";
 var records = 5;
 var debug = false;
 // End User Configuration Settings
@@ -41,7 +43,7 @@ var next;
 var previous;
 
 // Initial query Url
-var query_url = `${domain}/api/v1/dashboard/?limit=${records}`;
+var query_url = `${domain}/api/v1/public/dashboard/?limit=${records}`;
     
 // Register the click handlers
 // 'next' and 'previous' will get updated on every API call
@@ -73,17 +75,20 @@ function refresh(url) {
 
       for (i = 0; i < data.objects.length; i++) {
         // Set the operational colors
-        if (data.objects[i]['status'] == 'operational') {
+        if (data.objects[i]['status'] == '0') {
           color = color_operational;
           status = status_operational;
-        } else if (data.objects[i]['status'] == 'active incident') {
+        } else if (data.objects[i]['status'] == '1') {
           color = color_incident;
           status = status_incident;
-        } else if (data.objects[i]['status'] == 'active maintenance') {
+        } else if (data.objects[i]['status'] == '2') {
           color = color_maintenance;
           status = status_maintenance;
+        } else if (data.objects[i]['status'] == '3') {
+          color = color_both;
+          status = status_both;
         }
-        ul += `<li class="list-group-item d-flex justify-content-between align-items-center">${data.objects[i]['service_name']}<span class="badge badge-primary badge-pill" style="background-color:${color}">${status}</span></li>`;
+        ul += `<li class="list-group-item d-flex justify-content-between align-items-center">${data.objects[i]['name']}<span class="badge badge-primary badge-pill" style="background-color:${color}">${status}</span></li>`;
       }
 
       // Close the ul

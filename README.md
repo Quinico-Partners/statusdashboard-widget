@@ -30,7 +30,7 @@ The widget is currently built for sites utilizing Bootstrap 4.  Future versions 
 ## Configuration ##
 
 ### StatusDashboard Configuration ###
-In order for the StatusDashboard widget to acquire status information, the dashboard API must be enabled on your StatusDashboard account.  To enable the dashboard API, login to your [StatusDashboard account](https://www.statusdashboard.com/admin) and navigate to **Dashboard Design > Dashboard Options > Dashboard API > Edit**
+In order for the StatusDashboard widget to acquire status information, the dashboard API must be enabled on your StatusDashboard account.  To enable the dashboard API, login to your [StatusDashboard account](https://www.statusdashboard.com/admin) and navigate to **Status Dashbords > Edit > Options Dropdown > API**
 
 Note: If you have a dashboard whitelist enabled for the dashboard, ensure that the IP addresses from which the widget will be accessed are allowed. 
 
@@ -46,5 +46,7 @@ Configuration variables are located at the top of sd-widget.js.  These variables
 | status_incident | Incident | The text used to describe services experiencing an incident. |
 | color_maintenance | #2196F3 | The color to apply to services that are part of scheduled maintenance. |
 | status_maintenance | Maintenance | The text used to describe services that are part of scheduled maintenance. |
+| color_both | #FFA500 | The color to apply to services that are experiencing an incident and are also part of scheduled maintenance. |
+| status_both | Incident & Maintenance | The text used to describe services that are experiencing an incident and are also part of scheduled maintenance. |
 | records | 5 | The number of records to include on each page of the widget. |
 | debug | false | Enable debugging information to the JavaScript console for troubleshooting the widget. |
