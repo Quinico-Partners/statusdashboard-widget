@@ -31,7 +31,7 @@ var status_incident = 'Incident';
 var color_maintenance = "#2196F3";
 var status_maintenance = "Maintenance";
 var color_both = "#FFA500";
-var status_both = "Incident and Maintenance";
+var status_both = "Incident & Maintenance";
 var records = 5;
 var debug = false;
 // End User Configuration Settings
