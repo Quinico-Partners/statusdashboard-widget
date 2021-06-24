@@ -79,11 +79,11 @@ function refresh(url) {
           color = color_operational;
           status = status_operational;
         } else if (data.objects[i]['status'] == '1') {
-          color = color_incident;
-          status = status_incident;
-        } else if (data.objects[i]['status'] == '2') {
           color = color_maintenance;
           status = status_maintenance;
+        } else if (data.objects[i]['status'] == '2') {
+          color = color_incident;
+          status = status_incident;
         } else if (data.objects[i]['status'] == '3') {
           color = color_both;
           status = status_both;
